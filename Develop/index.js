@@ -68,7 +68,18 @@ function init() {
 
 function generateMarkdown(text) {
     return `
+
         # ${answers.title}
+
+        ## Table of Contents
+
+            - [Description](#description)
+            - [Installation Instructions](#installation-instructions)
+            - [Usage](#usage)
+            - [Contributing](#contributing)
+            - [Testing](#testing)
+            - [Licenses](#licenses)
+            - [Questions](#questions)
 
         ## Description
 
