@@ -1,6 +1,17 @@
-# Professional README Generator Starter Code
+# Professional README Generator
 
-[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
+## Description
+
+This project aims to make README's easier to create by taking input from a user and self generating a generalized README file.
+
+## Reason for creation
+
+I'm going to be honest here. I HATE creating README's for things that aren't complicated where a README file could honestly be unnecassary. Created out of hate.
+
+## Usage
+
+Only way to use, is by cloning the repo, then installing inquirer, then launching within a terminal
+
 
 
 

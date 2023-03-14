@@ -62,56 +62,54 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        writeToFile('REDME.md', generateMarkdown(answers))
+        const readmeText = `
+
+# ${answers.title}
+
+## Table of Contents
+
+- [Description](#description)
+- [Installation Instructions](#installation-instructions)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Testing](#testing)
+- [Licenses](#licenses)
+- [Questions](#questions)
+
+## Description
+
+${answers.description}
+
+## Installation Instructions
+
+${answers.installation}
+
+## Usage
+
+${answers.usage}
+
+## Contributing
+
+${answers.contributing}
+
+## Testing
+
+${answers.tests}
+
+## Licenses
+
+${answers.licenses}
+
+## Questions
+
+${answers.name}
+
+${answers.email}
+
+`
+
+        writeToFile('README.md', readmeText)
     })
-}
-
-function generateMarkdown(text) {
-    return `
-
-        # ${answers.title}
-
-        ## Table of Contents
-
-            - [Description](#description)
-            - [Installation Instructions](#installation-instructions)
-            - [Usage](#usage)
-            - [Contributing](#contributing)
-            - [Testing](#testing)
-            - [Licenses](#licenses)
-            - [Questions](#questions)
-
-        ## Description
-
-        ${answers.description}
-
-        ## Installation Instructions
-
-        ${answers.installation}
-
-        ## Usage
-
-        ${answers.usage}
-
-        ## Contributing
-
-        ${answers.contributing}
-
-        ## Testing
-
-        ${answers.tests}
-
-        ## Licenses
-
-        ${answers.licenses}
-
-        ## Questions
-
-        ${answers.name}
-
-        ${answers.email}
-
-        `
 }
 
 // Function call to initialize app
