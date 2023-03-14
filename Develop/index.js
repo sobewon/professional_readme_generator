@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-var inquirer = require('inquirer');
+const inquirer = require('inquirer');
 const fs = require('fs')
 
 // TODO: Create an array of questions for user input
@@ -43,6 +43,11 @@ const questions = [
         type: 'input',
         name: 'name',
         message: 'What is your name?'
+      },
+      {
+        type: 'input',
+        name: 'username',
+        message: 'What is your github username?'
       },
       {
         type: 'input',
@@ -102,7 +107,9 @@ ${answers.licenses}
 
 ## Questions
 
-${answers.name}
+Hi my name is ${answers.name}! If you require any help please contact me at my [GitHub Profile](https://github.com/${answers.username})
+
+or
 
 ${answers.email}
 
