@@ -39,6 +39,16 @@ const questions = [
         name: 'licenses',
         choices: ['MIT', 'GPLv3', 'Apache 2.0', 'BSD 3-Clause', 'None','In Progress', 'Not Sure'],
       },
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is your name?'
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email?'
+      },
 ];
 
 // TODO: Create a function to write README file
@@ -52,8 +62,45 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        writeToFile('REDME.md', generateMarkdwn(answers))
+        writeToFile('REDME.md', generateMarkdown(answers))
     })
+}
+
+function generateMarkdown(text) {
+    return `
+        # ${answers.title}
+
+        ## Description
+
+        ${answers.description}
+
+        ## Installation Instructions
+
+        ${answers.installation}
+
+        ## Usage
+
+        ${answers.usage}
+
+        ## Contributing
+
+        ${answers.contributing}
+
+        ## Testing
+
+        ${answers.tests}
+
+        ## Licenses
+
+        ${answers.licenses}
+
+        ## Questions
+
+        ${answers.name}
+
+        ${answers.email}
+
+        `
 }
 
 // Function call to initialize app
